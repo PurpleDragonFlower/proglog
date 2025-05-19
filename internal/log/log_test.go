@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-func TestLof(t *testing.T){
+func TestLog(t *testing.T){
 	for scenario, fn := range map[string]func(
 		t *testing.T, log *Log,
 	){
