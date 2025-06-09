@@ -35,7 +35,7 @@ func newStore(f *os.File) (*store, error){
 
 func (s *store) Append(p []byte) (n uint64, pos uint64, err error){
 	s.mu.Lock()
-	defer s.mu.Lock()
+	defer s.mu.Unlock()
 	pos = s.size
 	if err := binary.Write(s.buf, enc, uint64(len(p))); err != nil {
 		return 0, 0, err
